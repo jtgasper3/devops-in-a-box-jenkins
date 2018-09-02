@@ -1,7 +1,11 @@
 FROM jenkins/jenkins:lts-alpine
 
+USER root
+
 RUN apk update && apk upgrade \
     && apk add --no-cache bash git openssh
+
+USER jenkins
 
 ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
  
