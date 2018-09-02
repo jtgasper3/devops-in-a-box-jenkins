@@ -1,5 +1,8 @@
 FROM jenkins/jenkins:lts-alpine
- 
+
+RUN apk update && apk upgrade \
+    && apk add --no-cache bash git openssh
+
 ENV JAVA_OPTS="-Djenkins.install.runSetupWizard=false"
  
 COPY security.groovy /usr/share/jenkins/ref/init.groovy.d/security.groovy
