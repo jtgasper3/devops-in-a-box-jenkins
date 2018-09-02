@@ -69,3 +69,4 @@ matrix-auth
 pam-auth
 ldap
 email-ext
+openJDK-native-plugin
